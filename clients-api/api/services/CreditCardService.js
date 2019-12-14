@@ -1,0 +1,41 @@
+module.exports = {
+    create: async ( data, userId ) => {
+        if (data == undefined) return undefined; 
+        let response = {}
+        data.user = userId;
+        try {
+            let creditCard = await CreditCard.create(data).fetch();
+            response.success = true;
+            response.message = 'Tarjeta de credito creada';
+        } catch (error) {
+            response.success = false;
+            response.error = error;
+            console.log(error);
+        }
+        return response;
+    },
+    newCreditCards: async ( creditCards, userId ) => {
+        for (let creditCard of creditCards) {
+            await CreditCardService.create( creditCard, userId );
+        }
+        return true;
+    },
+    update: async ( data, creditCardId ) => {
+        let response = {}
+        try {
+            await CreditCard.update( creditCardId ).set({
+                pan: data.pan,
+                expirationDate: data.expirationDate,
+                cvv: data.cvv,
+                brand: data.brand,
+            });
+            response.success = true;
+            response.message = 'Usuario editado';
+        } catch (error) {
+            response.success = false;
+            response.error = error;
+            console.log(error);
+        }
+        return response;
+    },
+}
