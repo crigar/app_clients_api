@@ -21,10 +21,14 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
   'post /entity/create': 'EntityController.create',
+  'post /login': 'UserController.login',
   'post /user/sign-up': 'UserController.create',
   'post /client/create': 'UserController.newClient',
   'put /client/:id/update': 'UserController.update',
   'put /credit-card/:id/update': 'CreditCardController.update',
+  'get /entity/all-entities': 'EntityController.getAll',
+  'get /user/search': 'UserController.getUserByParam',
+  'post /client/:id/new-card': 'CreditCardController.new',
 
 
   /***************************************************************************

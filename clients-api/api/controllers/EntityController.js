@@ -10,6 +10,10 @@ module.exports = {
         let response = await EntityService.create( req.body );
         return res.json(response);
     },
+    getAll: async (req, res) => {
+        let entities = await Entity.find();
+        return res.json(entities)
+    },
 
 };
 

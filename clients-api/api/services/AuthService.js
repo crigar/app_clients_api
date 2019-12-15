@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 module.exports = {
     validate: async (user, password) => {
         const hash = crypto.createHash('md5').update(password).digest('hex');
-        return user.password == hash;
+        return user.pass == hash;
     },
     getToken: async (data, expiresIn) => {
         const token = await jwt.sign(data, config.secret, {
@@ -13,7 +13,6 @@ module.exports = {
         return token;
     },
     encryptPass: async function (password) {
-        let crypto = require('crypto');
         let hash = crypto.createHash('md5')
           .update(password)
           .digest('hex');

@@ -29,6 +29,10 @@ module.exports = {
       type: 'string',
       columnName: 'name',
     },
+    email: {
+      type: 'string',
+      columnName: 'email',
+    },
     phone: {
       type: 'string',
       columnName: 'phone',

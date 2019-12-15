@@ -1,10 +1,12 @@
 module.exports = {
     create: async ( data, userId ) => {
-        if (data == undefined) return undefined; 
         let response = {}
         data.user = userId;
+        console.log(data);
+        
         try {
             let creditCard = await CreditCard.create(data).fetch();
+            await User.addToCollection(userId, 'creditCards', creditCard.id);
             response.success = true;
             response.message = 'Tarjeta de credito creada';
         } catch (error) {
@@ -15,6 +17,7 @@ module.exports = {
         return response;
     },
     newCreditCards: async ( creditCards, userId ) => {
+        if (creditCards == undefined) return undefined; 
         for (let creditCard of creditCards) {
             await CreditCardService.create( creditCard, userId );
         }

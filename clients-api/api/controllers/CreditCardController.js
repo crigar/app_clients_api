@@ -10,5 +10,9 @@ module.exports = {
         let response = await CreditCardService.update( req.body, req.params.id );
         return res.json(response);
     },
+    new: async (req, res) => {
+        let response = await CreditCardService.create( req.body, req.params.id );
+        return res.json(response);
+    },
 };
 
