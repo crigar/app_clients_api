@@ -151,9 +151,9 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cors: {
-      allowOrigins: [
-        'https://app-clients-api.herokuapp.com/',
-      ]
+      // allowOrigins: [
+      //   'https://example.com',
+      // ]
     },
 
   },
@@ -254,9 +254,8 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     onlyAllowOrigins: [
-      'https://example.com',
+      'https://app-clients-api.herokuapp.com',
       'https://staging.example.com',
-      'https://app-clients-api.herokuapp.com/',
     ],
 
 
@@ -375,7 +374,7 @@ module.exports = {
   *                                                                         *
   ***************************************************************************/
   custom: {
-    baseUrl: 'https://app-clients-api.herokuapp.com/',
+    baseUrl: 'https://example.com',
     internalEmailAddress: 'support@example.com',
 
     // mailgunDomain: 'mg.example.com',
