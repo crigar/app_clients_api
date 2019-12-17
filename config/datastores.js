@@ -49,8 +49,9 @@ module.exports.datastores = {
     *                                                                          *
     ***************************************************************************/
     adapter: 'sails-postgresql',
-    url: 'postgresql://postgres://sgwavyzoryykin:a09d67b54e730dee55018d6107930abd0e63fad0e770a85400d4395029c3efe9@ec2-174-129-33-30.compute-1.amazonaws.com:5432/d5v0h9sjer1ve8',
-    
+    //url: 'postgresql://postgres:criskalitol@localhost:5432/app_clients_dev',
+    url: 'postgresql://sgwavyzoryykin:a09d67b54e730dee55018d6107930abd0e63fad0e770a85400d4395029c3efe9@ec2-174-129-33-30.compute-1.amazonaws.com:5432/d5v0h9sjer1ve8',
+    ssl: true,
 
   },
 
