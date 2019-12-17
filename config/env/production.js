@@ -72,6 +72,9 @@ module.exports = {
       ****************************************************************************/
       // ssl: true,
 
+      adapter: 'sails-postgresql',
+      url: 'postgresql://postgres://sgwavyzoryykin:a09d67b54e730dee55018d6107930abd0e63fad0e770a85400d4395029c3efe9@ec2-174-129-33-30.compute-1.amazonaws.com:5432/d5v0h9sjer1ve8',
+
     },
 
   },
@@ -148,9 +151,9 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cors: {
-      // allowOrigins: [
-      //   'https://example.com',
-      // ]
+      allowOrigins: [
+        'https://app-clients-api.herokuapp.com/',
+      ]
     },
 
   },
@@ -250,10 +253,11 @@ module.exports = {
     * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
     *                                                                          *
     ***************************************************************************/
-    // onlyAllowOrigins: [
-    //   'https://example.com',
-    //   'https://staging.example.com',
-    // ],
+    onlyAllowOrigins: [
+      'https://example.com',
+      'https://staging.example.com',
+      'https://app-clients-api.herokuapp.com/',
+    ],
 
 
     /***************************************************************************
@@ -371,7 +375,7 @@ module.exports = {
   *                                                                         *
   ***************************************************************************/
   custom: {
-    baseUrl: 'https://example.com',
+    baseUrl: 'https://app-clients-api.herokuapp.com/',
     internalEmailAddress: 'support@example.com',
 
     // mailgunDomain: 'mg.example.com',
